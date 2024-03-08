@@ -1,0 +1,86 @@
+.checkboxLayout {
+	@apply  inline-flex items-center whitespace-nowrap align-middle;
+	.checkboxLabel {
+		@apply flex cursor-pointer items-baseline gap-2 text-sm leading-[22px] tracking-[0] text-[#333333];
+		& > span {
+			@apply whitespace-normal text-sm leading-[22px] tracking-[0] text-[#333333];
+		}
+		.checkboxInnerContainer {
+			@apply relative top-[2px] inline-block h-4 w-4 shrink-0 cursor-pointer whitespace-nowrap border-0 align-middle leading-[0] shadow-none outline-0;
+			.checkboxInput {
+				@apply absolute bottom-0 left-0 h-0 w-0 appearance-none border-0 p-0 opacity-0 outline-0;
+				&:checked + .checkboxFrame {
+					@apply border-[#006bb1] bg-[#006bb1];
+					.checkboxCheckMark {
+						@apply opacity-100;
+						.checkboxCheckMarkPath {
+							@apply animate-[180ms_linear_0ms_checkboxUncheckedChecked];
+							stroke-dashoffset: 0;
+						}
+					}
+				}
+				&:disabled + .checkboxFrame {
+					@apply border-[#e4e4e4] bg-[#f9f9f9];
+				}
+			}
+			.checkboxFrame {
+				@apply absolute inset-0 box-border rounded-[3px] border border-solid border-[#9c9c9c] bg-transparent;
+				.checkboxCheckMark {
+					@apply absolute inset-0 w-full;
+					.checkboxCheckMarkPath {
+						@apply stroke-[3px];
+						stroke-dashoffset: 23;
+						stroke-dasharray: 23;
+					}
+				}
+			}
+			&:focus-visible {
+				.checkboxFrame {
+					@apply outline outline-2 -outline-offset-1 outline-[#006bb1];
+				}
+			}
+		}
+	}
+	&.checkboxDisabled {
+		@apply pointer-events-none cursor-default;
+		.checkboxLabel {
+			.checkboxInnerContainer {
+				.checkboxFrame {
+					@apply border-[#e4e4e4] bg-[#f9f9f9];
+				}
+			}
+		}
+	}
+	&.medium {
+		.checkboxLabel {
+			& > span {
+				@apply text-sm;
+			}
+			.checkboxInnerContainer {
+				@apply h-4 w-4;
+			}
+		}
+	}
+	&.large {
+		.checkboxLabel {
+			& > span {
+				@apply text-base;
+			}
+			.checkboxInnerContainer {
+				@apply top-[4px] h-5 w-5;
+			}
+		}
+	}
+}
+@keyframes checkboxUncheckedChecked {
+	0%,
+	50% {
+		stroke-dashoffset: 23;
+	}
+	50% {
+		animation-timing-function: cubic-bezier(0, 0, 0.2, 0.1);
+	}
+	100% {
+		stroke-dashoffset: 0;
+	}
+}

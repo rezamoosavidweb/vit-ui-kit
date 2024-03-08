@@ -1,0 +1,36 @@
+.button {
+	@apply box-border flex cursor-pointer items-center justify-center text-center shadow-none hover:underline focus:underline disabled:cursor-default disabled:hover:no-underline;
+}
+.primary {
+	@apply border-0 border-none bg-[#006bb1] font-medium text-white outline-[#006bb1] focus:outline-2 focus:outline-offset-[3px];
+	&:disabled {
+		@apply border-[#c8c8c8] bg-[#c8c8c8] text-white #{!important};
+	}
+}
+.secondary {
+	@apply border border-solid border-[#006bb1] bg-white font-normal text-[#006bb1] hover:border-transparent hover:outline hover:outline-2 hover:outline-offset-[-2px] hover:outline-[#006bb1] focus:border-transparent focus:outline focus:outline-2 focus:outline-offset-[-2px] focus:outline-[#006bb1];
+	&:disabled {
+		@apply border-[#c8c8c8] text-[#c8c8c8] hover:outline-0 focus:outline-0 #{!important};
+	}
+}
+.small {
+	@apply min-h-[35px] min-w-[70px] px-[22px] py-[4px] text-sm leading-[22px];
+	&.rounded {
+		@apply rounded-[18px];
+	}
+}
+.medium {
+	@apply min-h-[40px] min-w-[74px] px-[22px] py-[7px] text-sm leading-[22px];
+	&.rounded {
+		@apply rounded-[20px];
+	}
+}
+.large {
+	@apply min-h-[44px] min-w-[94px] px-6 py-[8px] text-base leading-[24px];
+	&.rounded {
+		@apply rounded-[22px];
+	}
+}
+.squared {
+	@apply rounded;
+}
