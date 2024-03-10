@@ -8,7 +8,7 @@
 import Checkbox from '@/once-ui/checkbox/checkbox';
 
 <Checkbox themeColor="#000000" checked={false}>
-	This is checkbox
+  This is checkbox
 </Checkbox>;
 ```
 
@@ -39,30 +39,30 @@ import React from 'react';
 import Checkbox from './Checkbox';
 
 function App() {
-	const handleCheckboxChange = (isChecked) => {
-		console.log('Checkbox checked:', isChecked);
-	};
+  const handleCheckboxChange = (isChecked) => {
+    console.log('Checkbox checked:', isChecked);
+  };
 
-	// or as below
+  // or as below
 
-	const [isChecked, setIsChecked] = useState(false);
-	const handleCheck = () => {
-		setIsChecked(!isChecked);
-	};
+  const [isChecked, setIsChecked] = useState(false);
+  const handleCheck = () => {
+    setIsChecked(!isChecked);
+  };
 
-	return (
-		<div>
-			<Checkbox themeColor="#007bff" checked onChange={handleCheckboxChange}>
-				Option 1
-			</Checkbox>
-			<Checkbox className="texting" name="checkbox2" onChange={handleCheck} checked={isChecked}>
-				Option 2
-			</Checkbox>
-			<Checkbox themeColor="#ff5500" disabled>
-				Option 3 (Disabled)
-			</Checkbox>
-		</div>
-	);
+  return (
+    <div>
+      <Checkbox themeColor="#007bff" checked onChange={handleCheckboxChange}>
+        Option 1
+      </Checkbox>
+      <Checkbox className="texting" name="checkbox2" onChange={handleCheck} checked={isChecked}>
+        Option 2
+      </Checkbox>
+      <Checkbox themeColor="#ff5500" disabled>
+        Option 3 (Disabled)
+      </Checkbox>
+    </div>
+  );
 }
 
 export default App;

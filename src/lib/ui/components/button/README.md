@@ -8,7 +8,7 @@
 import Button from '../once-ui-react/button/button';
 
 <Button variant="primary" size="small" shape="rounded">
-	Click me
+  Click me
 </Button>;
 ```
 
@@ -29,7 +29,7 @@ You can use any other prop that is supported by the native HTML / React button s
 
 ```tsx
 <Button variant="primary" size="medium">
-	Submit
+  Submit
 </Button>
 ```
 
@@ -37,7 +37,7 @@ You can use any other prop that is supported by the native HTML / React button s
 
 ```tsx
 <Button variant="secondary" size="large" className="custom-button">
-	Cancel
+  Cancel
 </Button>
 ```
 
@@ -45,6 +45,6 @@ You can use any other prop that is supported by the native HTML / React button s
 
 ```tsx
 <Button variant="secondary" size="large" className="custom-button" style={{ color: '#000000' }}>
-	Cancel
+  Cancel
 </Button>
 ```

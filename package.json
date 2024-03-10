@@ -1,26 +1,32 @@
 {
   "name": "@rezamoosavi/ui-react",
   "private": false,
-  "version": "1.4.4",
+  "version": "1.5.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/scheduleonce/once-ui-react"
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "workspace-preset.ts"
   ],
-  "main": "./dist/ui-react.umd.js",
-  "module": "./dist/ui-react.es.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/ui.cjs.js",
+  "module": "./dist/ui.es.js",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/ui-react.es.js",
-      "require": "./dist/ui-react.umd.js",
-      "styles": "./dist/index.css"
+    "./ui": {
+      "types": "./dist/ui.d.ts",
+      "import": "./dist/ui.es.js",
+      "require": "./dist/ui.cjs.js",
+      "styles": "./dist/ui.css"
     },
-    "./css": "./dist/index.css"
+    "./service": {
+      "types": "./dist/fetcher.d.ts",
+      "import": "./dist/fetcher.es.js",
+      "require": "./dist/fetcher.cjs.js"
+    },
+    "./css": "./dist/ui.css",
+    "./theme": "./workspace-preset.ts"
   },
   "publishConfig": {
     "access": "public"

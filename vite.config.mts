@@ -32,10 +32,12 @@ const app = async (): Promise<UserConfigExport> => {
     },
     build: {
       lib: {
-        entry: path.resolve(__dirname, 'src/lib/index.ts'),
+        entry: {
+          fetcher: path.resolve(__dirname, 'src/lib/services/index.ts'),
+          ui: path.resolve(__dirname, 'src/lib/ui/index.ts'),
+        },
         name: formattedName,
-        formats: ['es', 'umd'],
-        fileName: (format) => `${formattedName}.${format}.js`,
+        fileName: (format, name) => `${name}.${format}.js`,
       },
       rollupOptions: {
         external: ['react/jsx-runtime', 'tailwindcss', ...Object.keys(peerDependencies)],
@@ -47,6 +49,7 @@ const app = async (): Promise<UserConfigExport> => {
             tailwindcss: 'tailwindcss',
           },
         },
+
         //@ts-ignore
         plugins: [babel({ babelHelpers: 'bundled' })],
       },
